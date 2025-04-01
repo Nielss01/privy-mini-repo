@@ -1,5 +1,5 @@
 {
-  "name": "app3000",
+  "name": "app3002",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@privy-io/react-auth": "^2.8.0",
+    "@solana/web3.js": "^1.98.0",
+    "@t3-oss/env-nextjs": "^0.12.0",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
