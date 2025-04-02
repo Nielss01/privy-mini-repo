@@ -12,8 +12,8 @@ export async function middleware(req: NextRequest) {
   const { pathname, searchParams } = req.nextUrl
   const cookieAuthToken = req.cookies.get('privy-token')
   const cookieSession = req.cookies.get('privy-session')
-  console.log('cookieAuthToken', cookieAuthToken)
-  console.log('cookieSession', cookieSession)
+  console.log('cookieAuthToken', cookieAuthToken !== undefined)
+  console.log('cookieSession', cookieSession !== undefined)
 
   // If the user is already authenticated and trying to access the login page,
   // redirect them to the home page
