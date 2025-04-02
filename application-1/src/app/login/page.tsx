@@ -5,14 +5,14 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const { login } = useLogin();
+  const { login } = useLogin({
+    onComplete: () => {
+      router.push("/org");
+    },
+  });
   const { ready } = usePrivy();
   const router = useRouter();
 
-  const login1 = () => {
-    login();
-    router.push("/org");
-    };
 
 if (!ready) return <div>Loading...</div>;
 
@@ -22,7 +22,7 @@ if (!ready) return <div>Loading...</div>;
         <h1 className="mb-4 font-bold text-2xl">Welcome to App 3000</h1>
         <button
           className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700"
-          onClick={() => login1()}
+          onClick={() => login()}
         >
           Login with Privy
         </button>

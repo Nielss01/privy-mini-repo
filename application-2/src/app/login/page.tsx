@@ -5,15 +5,15 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const { login } = useLogin();
+  const { login } = useLogin({
+    onComplete: () => {
+      router.push("/org");
+    }
+  });
   const { ready, authenticated } = usePrivy();
   const router = useRouter();
 
-  useEffect(() => {
-    if (authenticated) {
-      router.push("/org");
-    }
-  }, [authenticated, router]);
+
 
   if (!ready) return <div>Loading...</div>;
 
